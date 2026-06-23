@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Ants Technologies Global Limited | Innovation & Mobile Solutions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Tech Cyberpunk Background Accents */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #f97316;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f97316;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #9ca3af;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(249, 115, 22, 0.6);
+        }
+
+        /* Studio Showcase Section */
+        .showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: #ffffff;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #f97316;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(249, 115, 22, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        /* Verification Panel - Meta Friendly */
+        .verification-info {
+            background: rgba(15, 23, 42, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 4rem 2rem;
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .info-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero h1 { font-size: 2.5rem; }
+        }
+
+        .info-block h3 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .info-table td.label {
+            color: #9ca3af;
+            width: 35%;
+            font-weight: 500;
+        }
+
+        .info-table td.value {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #070a12;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">🔥 Fire Ants <span>Studios</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#showcase">Products</a></li>
+                <li><a href="#corporate">Corporate</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="about">
+        <h1>Hive Minds for the Hyperminds</h1>
+        <p>We build high-performance mobile utilities and immersive gaming experiences powered by cutting-edge engineering and data-driven optimization.</p>
+        <a href="#corporate" class="btn">Corporate Profile</a>
+    </section>
+
+    <section class="showcase" id="showcase">
+        <h2 class="section-title">Our Studio Matrix</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Mobile Application Growth</h3>
+                <p>Advanced system optimizations, utility tooling, and algorithmic user experiences tailored for global audiences.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Data Pipeline Architecture</h3>
+                <p>Real-time analytics integration, maximizing User Acquisition (UA) transparency and scalable monetization ecosystems.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎮</div>
+                <h3>Immersive Development</h3>
+                <p>Crafting interactive experiences that captivate users worldwide, blending top-tier design with fluid execution.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="verification-info" id="corporate">
+        <div class="info-container">
+            <div class="info-block">
+                <h3>🏢 Legal Corporate Entity</h3>
+                <table class="info-table">
+                    <tr>
+                        <td class="label">Legal Entity Name</td>
+                        <td class="value">FIRE ANTS TECHNOLOGIES GLOBAL LIMITED</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Business Tax ID / BRN</td>
+                        <td class="value">80320438</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Jurisdiction</td>
+                        <td class="value">Hong Kong SAR</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Incorporation Date</td>
+                        <td class="value">04 May 2026</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="info-block">
+                <h3>📍 Registered Office Address</h3>
+                <table class="info-table">
+                    <tr>
+                        <td class="label">Address Line</td>
+                        <td class="value">SUITE C, LEVEL 7, WORLD TRUST TOWER, 50 STANLEY STREET, CENTRAL</td>
+                    </tr>
+                    <tr>
+                        <td class="label">City / District</td>
+                        <td class="value">CENTRAL</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Region / Country</td>
+                        <td class="value">HONG KONG</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Official Status</td>
+                        <td class="value">Body Corporate (Active)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 FIRE ANTS TECHNOLOGIES GLOBAL LIMITED. All Rights Reserved.</p>
+        <p style="margin-top: 5px; font-size: 0.75rem;">Registered in Hong Kong under the Companies Ordinance (Chapter 622) | Business Registration No. 80320438</p>
+    </footer>
+
+</body>
+</html>
